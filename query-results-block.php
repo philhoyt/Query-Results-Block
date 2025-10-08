@@ -2,6 +2,7 @@
 /**
  * Plugin Name: Query Results Block
  * Description: Adds an inner block for core/query that shows content only when the parent Query has posts.
+ *  * Plugin URI:        https://github.com/philhoyt/CPT-Taxonomy-Syncer
  * Version: 1.0.0
  * Author:            Phil Hoyt
  * Author URI:        https://philhoyt.com
