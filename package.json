@@ -1,0 +1,29 @@
+{
+	"name": "query-results-block",
+	"version": "1.0.0",
+	"description": "WordPress plugin that adds a dynamic inner block for core/query",
+	"main": "build/index.js",
+	"scripts": {
+		"build": "wp-scripts build",
+		"dev": "wp-scripts start",
+		"lint:css": "wp-scripts lint-style",
+		"lint:js": "wp-scripts lint-js",
+		"packages-update": "wp-scripts packages-update"
+	},
+	"keywords": [
+		"wordpress",
+		"gutenberg",
+		"block",
+		"query"
+	],
+	"author": "Your Name",
+	"license": "GPL-2.0-or-later",
+	"devDependencies": {
+		"@wordpress/scripts": "^26.19.0"
+	},
+	"dependencies": {
+		"@wordpress/block-editor": "^12.20.0",
+		"@wordpress/blocks": "^12.29.0",
+		"@wordpress/i18n": "^4.52.0"
+	}
+}
