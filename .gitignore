@@ -4,11 +4,6 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# Build output (except block.json which is needed)
-build/index.js
-build/index.asset.php
-build/*.map
-
 # IDE files
 .vscode/
 .idea/
