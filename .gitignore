@@ -17,3 +17,4 @@ Thumbs.db
 # WordPress
 wp-config.php
 .htaccess
+*.zip
