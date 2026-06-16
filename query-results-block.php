@@ -3,7 +3,7 @@
  * Plugin Name:       Query Results Block
  * Description:       Adds an inner block for core/query that shows content only when the parent Query has posts.
  * Plugin URI:        https://github.com/philhoyt/Query-Results-Block
- * Version:           1.0.0
+ * Version:           1.1.0
  * Requires at least: 6.4
  * Requires PHP:      7.4
  * Tested up to:      7.0

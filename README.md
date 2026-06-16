@@ -37,5 +37,9 @@ This way, visitors only see the "Latest Posts" heading when there are actually p
 
 ## Changelog
 
+### 1.1.0
+- Add: Automatic updates delivered through GitHub releases — update notifications now appear in the WordPress dashboard.
+- Fix: Internal code cleanup and WordPress coding-standards compliance.
+
 ### 1.0.0
 - Initial release: adds the Results block for the Query Loop, which shows its inner content only when the query returns posts.

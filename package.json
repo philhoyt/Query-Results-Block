@@ -1,6 +1,6 @@
 {
 	"name": "query-results-block",
-	"version": "1.0.0",
+	"version": "1.1.0",
 	"description": "WordPress plugin that adds a dynamic inner block for core/query",
 	"main": "build/index.js",
 	"scripts": {
