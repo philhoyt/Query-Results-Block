@@ -8,7 +8,10 @@ const TEMPLATE = [
 	[
 		'core/paragraph',
 		{
-			placeholder: __( 'Add text or blocks that will display when a query returns results.', 'query-results-block' ),
+			placeholder: __(
+				'Add text or blocks that will display when a query returns results.',
+				'query-results-block'
+			),
 		},
 	],
 ];
@@ -24,5 +27,5 @@ registerBlockType( metadata.name, {
 	},
 	save: () => {
 		return <InnerBlocks.Content />;
-	}
+	},
 } );
