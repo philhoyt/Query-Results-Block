@@ -1,0 +1,25 @@
+{
+    "name": "philhoyt/query-results-block",
+    "description": "WordPress plugin that adds a dynamic inner block for core/query",
+    "type": "wordpress-plugin",
+    "minimum-stability": "stable",
+    "require-dev": {
+        "squizlabs/php_codesniffer": "*",
+        "wp-coding-standards/wpcs": "*",
+        "phpstan/phpstan": "*",
+        "szepeviktor/phpstan-wordpress": "*",
+        "phpunit/phpunit": "^9.6",
+        "yoast/phpunit-polyfills": "^2.0"
+    },
+    "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
+    },
+    "scripts": {
+        "lint": "./vendor/bin/phpcs",
+        "lint:fix": "./vendor/bin/phpcbf",
+        "analyse": "./vendor/bin/phpstan analyse --memory-limit=1G",
+        "test": "./vendor/bin/phpunit"
+    }
+}

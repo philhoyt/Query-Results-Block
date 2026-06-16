@@ -18,3 +18,12 @@ Thumbs.db
 wp-config.php
 .htaccess
 *.zip
+
+# Claude Code — machine-specific session permissions, not shared
+.claude/settings.local.json
+
+# Claude Code — local feature planning notes, not part of the codebase
+plans/
+
+# Composer
+/vendor/
