@@ -30,3 +30,6 @@ plans/
 
 # PHPUnit
 .phpunit.result.cache
+
+# Release staging
+dist/

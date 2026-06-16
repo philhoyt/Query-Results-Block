@@ -34,3 +34,8 @@ Query Loop Block
 ```
 
 This way, visitors only see the "Latest Posts" heading when there are actually posts to show.
+
+## Changelog
+
+### 1.0.0
+- Initial release: adds the Results block for the Query Loop, which shows its inner content only when the query returns posts.

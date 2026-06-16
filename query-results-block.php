@@ -21,6 +21,23 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
+// Self-hosted update checks via GitHub releases.
+if ( file_exists( __DIR__ . '/lib/plugin-update-checker/plugin-update-checker.php' ) ) {
+	require_once __DIR__ . '/lib/plugin-update-checker/plugin-update-checker.php';
+
+	$qrb_update_checker = YahnisElsts\PluginUpdateChecker\v5\PucFactory::buildUpdateChecker(
+		'https://github.com/philhoyt/Query-Results-Block/',
+		__FILE__,
+		'query-results-block'
+	);
+
+	// Install updates from the zip attached to each GitHub release (GitHub API only).
+	$qrb_vcs_api = $qrb_update_checker->getVcsApi();
+	if ( method_exists( $qrb_vcs_api, 'enableReleaseAssets' ) ) {
+		$qrb_vcs_api->enableReleaseAssets();
+	}
+}
+
 /**
  * Initialize the plugin.
  */

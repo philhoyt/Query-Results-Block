@@ -3,6 +3,9 @@
     "description": "WordPress plugin that adds a dynamic inner block for core/query",
     "type": "wordpress-plugin",
     "minimum-stability": "stable",
+    "require": {
+        "yahnis-elsts/plugin-update-checker": "^5.3"
+    },
     "require-dev": {
         "squizlabs/php_codesniffer": "*",
         "wp-coding-standards/wpcs": "*",
@@ -20,6 +23,9 @@
         "lint": "./vendor/bin/phpcs",
         "lint:fix": "./vendor/bin/phpcbf",
         "analyse": "./vendor/bin/phpstan analyse --memory-limit=1G",
-        "test": "./vendor/bin/phpunit"
+        "test": "./vendor/bin/phpunit",
+        "copy-puc": "rsync -a --delete vendor/yahnis-elsts/plugin-update-checker/ lib/plugin-update-checker/",
+        "post-install-cmd": "@copy-puc",
+        "post-update-cmd": "@copy-puc"
     }
 }

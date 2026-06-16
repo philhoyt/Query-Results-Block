@@ -5,8 +5,11 @@ parameters:
     level: 5
     paths:
         - query-results-block.php
+    scanDirectories:
+        - lib/plugin-update-checker
     excludePaths:
         - vendor
         - node_modules
         - build
         - tests
+        - lib

@@ -5,6 +5,7 @@
 	"main": "build/index.js",
 	"scripts": {
 		"build": "wp-scripts build",
+		"plugin-zip": "rm -rf dist query-results-block.zip && mkdir -p dist/query-results-block && cp -r query-results-block.php build lib README.md dist/query-results-block/ && cd dist && zip -qr ../query-results-block.zip query-results-block && cd .. && rm -rf dist",
 		"start": "wp-scripts start",
 		"dev": "wp-scripts start",
 		"lint:css": "wp-scripts lint-style",
