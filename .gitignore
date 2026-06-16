@@ -27,3 +27,6 @@ plans/
 
 # Composer
 /vendor/
+
+# PHPUnit
+.phpunit.result.cache

@@ -1,1 +1,0 @@
-{"version":1,"defects":[],"times":{"Test_QRB_Render::test_block_is_registered_with_render_callback":0.01,"Test_QRB_Render::test_shows_content_when_query_has_posts":0.016,"Test_QRB_Render::test_hides_content_when_query_has_no_posts":0.001,"Test_QRB_Render::test_returns_empty_without_query_context":0.001}}
