@@ -1,5 +1,7 @@
 # Query Results Block
 
+[![CI](https://github.com/philhoyt/Query-Results-Block/actions/workflows/ci.yml/badge.svg)](https://github.com/philhoyt/Query-Results-Block/actions/workflows/ci.yml)
+
 A WordPress plugin that adds a "Results" block for the Query Loop. This block shows its content only when the Query Loop has posts to display - the perfect complement to WordPress's built-in "Query No Results" block.
 
 ## What It Does
