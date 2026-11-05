@@ -8,8 +8,8 @@ parameters:
     scanDirectories:
         - lib/plugin-update-checker
     excludePaths:
-        - vendor
-        - node_modules
-        - build
-        - tests
-        - lib
+        - vendor (?)
+        - node_modules (?)
+        - build (?)
+        - tests (?)
+        - lib (?)
