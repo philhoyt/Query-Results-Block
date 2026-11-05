@@ -2,49 +2,87 @@
 
 [![CI](https://github.com/philhoyt/Query-Results-Block/actions/workflows/ci.yml/badge.svg)](https://github.com/philhoyt/Query-Results-Block/actions/workflows/ci.yml)
 
-A WordPress plugin that adds a "Results" block for the Query Loop. This block shows its content only when the Query Loop has posts to display - the perfect complement to WordPress's built-in "Query No Results" block.
+Adds a "Results" block for the Query Loop that shows its content only when the query has posts.
 
-## What It Does
+It is the counterpart of the core "Query No Results" block. The render callback mirrors that block's logic with the condition reversed: it reads the parent Query Loop's query and page number from block context (including queries that inherit from the current page), runs the query, and prints the inner blocks only when it finds posts.
 
-The Results block acts as a container that only appears when your Query Loop finds posts. Think of it as the opposite of the "Query No Results" block that WordPress includes by default.
+## Requirements
+
+- WordPress 6.6 or later (tested up to 7.1)
+- PHP 7.4 or later
 
 ## Installation
 
-1. Download and upload the plugin files to `/wp-content/plugins/query-results-block/`
-2. Activate the plugin through the 'Plugins' screen in WordPress
-3. The "Results" block will now be available inside Query Loop blocks
+1. Download `query-results-block.zip` from the [latest release](https://github.com/philhoyt/Query-Results-Block/releases/latest) and install it through Plugins > Add New Plugin > Upload Plugin, or copy the folder into `wp-content/plugins/`.
+2. Activate the plugin. The "Results" block is then available inside Query Loop blocks.
 
-## How to Use
+Installed sites pick up later releases through Plugin Update Checker.
 
-1. **Add a Query Loop block** to your post, page, or template
-2. **Inside the Query Loop**, look for the "Results" block in the block inserter
-3. **Add the Results block** and place any content inside it that you want to show only when posts are found
-4. **Add your conditional content** - headings, text, buttons, or any other blocks
+## Usage
 
-The Results block content will automatically show or hide based on whether the Query Loop has posts.
+1. Add a Query Loop block to a post, page, or template.
+2. Inside the Query Loop, insert the "Results" block from the block inserter.
+3. Put the blocks you want to show only when posts are found inside it.
 
-## Example Usage
+Example layout:
 
 ```
-Query Loop Block
-├── Results Block
+Query Loop
+├── Results
 │   ├── Heading: "Latest Posts"
-│   └── Paragraph: "Check out our most recent articles"
+│   └── Paragraph: "Our most recent articles"
 ├── Post Template (your post layout)
-└── Query No Results Block
+└── Query No Results
     └── Paragraph: "No posts found"
 ```
 
-This way, visitors only see the "Latest Posts" heading when there are actually posts to show.
+Visitors see the "Latest Posts" heading only when there are posts to show.
+
+The block (`qrb/results-if`) has no attributes or settings. It can only be inserted inside `core/query`, and it uses the `query` and `queryId` context from that parent.
+
+## Development
+
+```bash
+npm install
+composer install        # also copies Plugin Update Checker into lib/
+
+npm start               # webpack watch
+npm run build           # production build to build/
+npm run lint:js
+npm run lint:css
+composer lint           # phpcs
+composer analyse        # phpstan
+
+npm run env:start       # wp-env
+npm run test:php        # PHPUnit inside wp-env (tests/phpunit/)
+npm run plugin-zip      # build query-results-block.zip
+```
+
+CI runs phpcs and phpstan on PHP 7.4 through 8.3, lints and builds the JS and CSS, and runs PHPUnit against wp-env.
+
+## Releases
+
+Bump the version in `query-results-block.php`, `src/block.json`, `package.json`, and `readme.txt` (Stable tag and a `= X.Y.Z =` changelog entry), then push a lowercase `v` tag:
+
+```bash
+git tag v1.1.1 && git push origin v1.1.1
+```
+
+The release workflow builds the assets, zips `query-results-block.php`, `readme.txt`, `README.md`, `build/`, and `lib/` into `query-results-block.zip`, pulls the matching changelog section out of `readme.txt` for the release notes, and attaches the zip, `readme.txt`, and `README.md` to the GitHub release.
+
+## Limitations
+
+- The block only works inside a Query Loop. It is not offered in the inserter anywhere else.
+- It has no conditions of its own beyond "the query has posts". Minimum post counts or per-post-type rules are not supported.
 
 ## Changelog
 
 ### 1.1.1
-- Change: Tested up to WordPress 7.1.
+- Tested up to WordPress 7.1.
 
 ### 1.1.0
-- Add: Automatic updates delivered through GitHub releases — update notifications now appear in the WordPress dashboard.
-- Fix: Internal code cleanup and WordPress coding-standards compliance.
+- Added update checks against GitHub releases, so new versions appear on the Plugins screen.
+- Changed internal code to follow the WordPress coding standards. No change to behaviour.
 
 ### 1.0.0
-- Initial release: adds the Results block for the Query Loop, which shows its inner content only when the query returns posts.
+- Initial release. Adds the Results block for the Query Loop, which shows its inner content only when the query returns posts.
