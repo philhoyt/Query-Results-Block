@@ -33,3 +33,6 @@ plans/
 
 # Release staging
 dist/
+
+# wp-env local override
+.wp-env.override.json
