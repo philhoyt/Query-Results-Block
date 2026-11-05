@@ -33,12 +33,13 @@ jobs:
       - name: Extract changelog
         run: |
           VERSION="${GITHUB_REF_NAME#v}"
-          awk "/^### ${VERSION}\$/{found=1;next} found && /^### /{exit} found{print}" README.md > changelog_body.txt
+          awk "/^= ${VERSION} =/{found=1} found && /^= [0-9]/ && !/^= ${VERSION} =/{exit} found{print}" readme.txt > changelog_body.txt
 
       - name: Create GitHub release
         uses: softprops/action-gh-release@v2
         with:
           files: |
             query-results-block.zip
+            readme.txt
             README.md
           body_path: changelog_body.txt
