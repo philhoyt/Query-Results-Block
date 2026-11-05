@@ -10,7 +10,7 @@
 		"dev": "wp-scripts start",
 		"lint:css": "wp-scripts lint-style",
 		"lint:js": "wp-scripts lint-js",
-		"test:unit": "wp-scripts test-unit-js",
+		"test:unit": "wp-scripts test-unit-js --passWithNoTests",
 		"test:e2e": "wp-scripts test-playwright",
 		"env:start": "wp-env start",
 		"env:stop": "wp-env stop",
@@ -27,14 +27,15 @@
 	"author": "Phil Hoyt",
 	"license": "GPL-2.0-or-later",
 	"devDependencies": {
-		"@wordpress/env": "^11.8.1",
-		"@wordpress/eslint-plugin": "^17.13.0",
-		"@wordpress/scripts": "^26.19.0",
-		"@wordpress/stylelint-config": "^21.41.0"
-	},
-	"dependencies": {
-		"@wordpress/block-editor": "^12.20.0",
-		"@wordpress/blocks": "^12.29.0",
-		"@wordpress/i18n": "^4.52.0"
+		"@wordpress/block-editor": "^20.0.0",
+		"@wordpress/blocks": "^17.1.0",
+		"@wordpress/env": "^12.1.0",
+		"@wordpress/eslint-plugin": "^28.1.0",
+		"@wordpress/i18n": "^7.1.0",
+		"@wordpress/scripts": "^37.1.0",
+		"@wordpress/stylelint-config": "^27.1.0",
+		"prettier": "npm:wp-prettier@^3.9.6",
+		"vite": "^8.3.5",
+		"vitest": "^5.1.0"
 	}
 }
