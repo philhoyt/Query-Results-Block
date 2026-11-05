@@ -39,6 +39,9 @@ This way, visitors only see the "Latest Posts" heading when there are actually p
 
 ## Changelog
 
+### 1.1.1
+- Change: Tested up to WordPress 7.1.
+
 ### 1.1.0
 - Add: Automatic updates delivered through GitHub releases — update notifications now appear in the WordPress dashboard.
 - Fix: Internal code cleanup and WordPress coding-standards compliance.
