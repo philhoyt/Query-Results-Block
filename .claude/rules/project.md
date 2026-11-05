@@ -15,6 +15,6 @@ paths:
 - Text domain: `query-results-block`
 - PHP minimum: unspecified
 - WP minimum: unspecified
-- Distribution: GitHub (no release workflow)
+- Distribution: GitHub (release workflow + Plugin Update Checker)
 - Main file: `query-results-block.php`
 - Version constant: none (version in plugin header only)
