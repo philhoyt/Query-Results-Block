@@ -4,7 +4,7 @@ Tags: query loop, block, conditional, posts, results
 Requires at least: 6.6
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 1.1.1
+Stable tag: 1.1.2
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -41,6 +41,10 @@ The plugin checks GitHub releases for updates and shows them on the Plugins scre
 2. Activate the plugin through the Plugins screen. The "Results" block is then available inside Query Loop blocks.
 
 == Changelog ==
+
+= 1.1.2 =
+* Fixed the update checker so it always installs the release zip, not whichever file GitHub lists first.
+* Rewrote the readme files in plain English.
 
 = 1.1.1 =
 * Tested up to WordPress 7.1.

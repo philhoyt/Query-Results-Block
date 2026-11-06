@@ -77,6 +77,10 @@ The release workflow builds the assets, zips `query-results-block.php`, `readme.
 
 ## Changelog
 
+### 1.1.2
+- Fixed the update checker so it always installs the release zip, not whichever file GitHub lists first.
+- Rewrote the readme files in plain English.
+
 ### 1.1.1
 - Tested up to WordPress 7.1.
 
